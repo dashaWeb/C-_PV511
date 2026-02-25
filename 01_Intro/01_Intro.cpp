@@ -10,7 +10,7 @@ int main()
         I                   I
             LOVE    LOVE
                 C++
-        )";
+        )" << "";
     // one line
     /*
      ctrl + shift + /
