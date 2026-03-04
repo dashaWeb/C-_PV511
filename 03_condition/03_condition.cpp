@@ -146,7 +146,7 @@ int main()
 		allDay += 31;
 	}
 	cout << "Result :: " << allDay << endl;*/
-	int choice;
+	/*int choice;
 	cout << "1 - Red; \n2 - Green; \n3 - Cyan; \n4 - Yellow; \n\t Enter :: ";
 	cin >> choice;
 
@@ -164,5 +164,25 @@ int main()
 	case YELLOW:
 		system("color 06");
 		break;
-	}
+	}*/
+
+	int a;
+	cout << "Emter 7 whole numbers --> ";
+	cin >> a;
+	int max = a;
+	cin >> a;
+	if (max < a) max =a;
+	cin >> a;
+	if (max < a) max = a;
+	cin >> a;
+	if (max < a) max = a;
+	cin >> a;
+	if (max < a) max = a;
+	cin >> a;
+	if (max < a) max = a;
+	cin >> a;
+	if (max < a) max = a;
+	cout << "Max :: " << max << endl;
+
+
 }
