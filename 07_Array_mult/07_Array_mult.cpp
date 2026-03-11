@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <ctime>
 using namespace std;
 
@@ -120,6 +120,9 @@ int main()
 	}
 	cout << "Result sum main diagonal :: " << sum << endl;
 	cout << "Result sum main diagonal :: " << sum_2 << endl;
+
+
+
 }
 
 
