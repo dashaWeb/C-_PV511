@@ -11,6 +11,17 @@ void printMessage(string name);
 int sum(int a, int b = 5);
 double divi(int a, int b);
 
+void printFigure(int r, int c)
+{
+    for (size_t i = 0; i < r; i++)
+    {
+        for (size_t j = 0; j < c; j++)
+        {
+            cout << "*";
+        }cout << endl;
+    }
+
+}
 
 int main()
 {
@@ -19,6 +30,8 @@ int main()
     int res = sum(2, 5);
     cout << "Sum :: " << sum(2,6) << endl;
     cout << "Div :: " << divi(5,2) << endl;
+
+    printFigure(10,7);
 }
 
 
