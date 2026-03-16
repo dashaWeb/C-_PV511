@@ -20,5 +20,5 @@ int factorial(int number)
 
 int main()
 {
-    cout << factorial(5) << endl;
+    cout << "Result :: " << factorial(5) << endl;
 }
