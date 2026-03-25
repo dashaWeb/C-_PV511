@@ -16,7 +16,11 @@ void delete_(T**& arr, const int& row);
 
 
 // add row to the begin
+template <typename T>
+void pushFront(T**& arr, int& row, const int& col);
 // add row to the end
+template <typename T>
+void pushBack(T**& arr, int& row, const int& col);
 // add row by index
 template <typename T>
 void insert(T**& arr, int& row, const int& col, const int& index);
@@ -77,6 +81,18 @@ inline void delete_(T**& arr, const int& row)
 	}
 	delete[] arr;
 	arr = nullptr;
+}
+
+template<typename T>
+inline void pushFront(T**& arr, int& row, const int& col)
+{
+	insert(arr, row, col, 0);
+}
+
+template<typename T>
+inline void pushBack(T**& arr, int& row, const int& col)
+{
+	insert(arr, row, col, row);
 }
 
 template<typename T>
