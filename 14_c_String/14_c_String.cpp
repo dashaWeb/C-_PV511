@@ -12,6 +12,49 @@ unsigned int strLen(const char* str)
     return counter;
 }
 
+// tasl 1
+
+void delet_(char line[], int value)
+{
+    for (size_t i = value; i < strlen(line); i++)
+    {
+        line[i] = line[i + 1];
+    }
+}
+
+// task 2
+
+void delete_symbol(char line[], char symbol)
+{
+    int j = 0;
+    for (size_t i = 0; i < strlen(line); i++)
+    {
+        if (line[i] != symbol)
+        {
+            line[j++] = line[i];
+        }
+    }
+    line[j] = '\0';
+}
+
+// task 3
+
+void insert(char line[], int index, char symbol)
+{
+    if (index < 0 and index >= strlen(line)) {
+        cout << "Error index" << endl;
+        return;
+    }
+    
+    for (size_t i = strlen(line); i > index ; i--)
+    {
+        line[i] = line[i - 1];
+    }
+    line[index] = symbol;
+    line[strlen(line)] = '\0';
+}
+
+
 int main()
 {
     //char str[]{'P','l','u','m','\0'};
@@ -134,27 +177,51 @@ int main()
         cout << "\t" << line[i] << " :: " << (char)toupper(line[i]) << endl;
     }
 
-    int age;
-    cout << "Enter age :: ";
-    cin >> age;
+    //int age;
+    //cout << "Enter age :: ";
+    //cin >> age;
 
-    char str_line[100];
-    cout << "Enter line :: ";
-    //cin >> str_line;
-    cin.ignore();
-    cin.getline(str_line, 100);
-    cout << "Result :: " << str_line << endl;
-    /*cin >> str_line;
-    cout << "Result :: " << str_line << endl;*/
+    //char str_line[100];
+    //cout << "Enter line :: ";
+    ////cin >> str_line;
+    //cin.ignore();
+    //cin.getline(str_line, 100);
+    //cout << "Result :: " << str_line << endl;
+    ///*cin >> str_line;
+    //cout << "Result :: " << str_line << endl;*/
 
-    string new_str = "test";
-    new_str[0] = 'T';
-    cout << new_str << endl;
-    cout << "Enter text :: ";
-    cin >> new_str;
-    cout << "Result :: " << new_str << endl;
-    cout << "Enter text :: ";
-    cin.ignore();
-    getline(cin,new_str);
-    cout << "Result :: " << new_str << endl;
+    //string new_str = "test";
+    //new_str[0] = 'T';
+    //cout << new_str << endl;
+    //cout << "Enter text :: ";
+    //cin >> new_str;
+    //cout << "Result :: " << new_str << endl;
+    //cout << "Enter text :: ";
+    //cin.ignore();
+    //getline(cin,new_str);
+    //cout << "Result :: " << new_str << endl;
+
+    /*char text[100] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+    bool flag = false;
+    int counert = 0;
+    for (size_t i = 0; i < strlen(text); i++)
+    {
+        if (isalpha(text[i])) {
+            if(!flag)
+                counert++;
+            flag = true;
+        }
+        else {
+            flag = false;
+        }
+    }
+    cout << counert << endl;*/
+
+    //char text[50] = "Lorem ipsum dolor";
+    char* text = new char[50];
+    strcpy_s(text, strlen("Lorem ipsum dolor")+1, "Lorem ipsum dolor");
+    cout << text << endl;
+    delete_symbol(text,'o');
+    cout << text << endl;
+
 }

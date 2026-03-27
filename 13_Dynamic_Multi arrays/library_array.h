@@ -31,7 +31,8 @@ template <typename T>
 void popBack(T**& arr, int& row);
 // delete row by index
 
-
+template<typename T>
+void addColIndex(T**& arr, int& row, int& col, const int& index_col, T vallue);
 
 
 
@@ -128,3 +129,24 @@ inline void popBack(T**& arr, int& row)
 	delete[] arr;
 	arr = tmp;
 }
+
+template<typename T>
+void addColIndex(T**& arr, int& row, int& col, const int& index_col, T vallue)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		T* tmp = new T[col + 1];
+		for (size_t j = 0; j < col; j++)
+		{
+			if (j < index_col)
+				tmp[j] = arr[i][j];
+			tmp[j + 1] = arr[i][j];
+		}
+		tmp[i][index_col] = vallue;
+		delete[] arr[i];
+		arr[i] = tmp[i];
+	}
+	col++;
+
+}
+
